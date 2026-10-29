@@ -1,0 +1,40 @@
+# Dependencies
+node_modules/
+frontend/node_modules/
+
+# Python Virtual Environments & Cache
+venv/
+backend/venv/
+.venv/
+__pycache__/
+backend/__pycache__/
+*.py[cod]
+*$py.class
+
+# Next.js Build & Cache
+.next/
+frontend/.next/
+dist/
+build/
+frontend/tsconfig.tsbuildinfo
+out/
+
+# Database & Local Data
+*.db
+*.sqlite
+*.sqlite3
+backend/database.db
+
+# Environment Variables
+.env
+.env.*
+!.env.example
+backend/.env
+frontend/.env.local
+
+# IDE & OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+*.log

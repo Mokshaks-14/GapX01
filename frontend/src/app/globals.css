@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 250 250 250;
+    --foreground: 9 9 11;
+  }
+
+  .dark {
+    --background: 9 9 11;
+    --foreground: 250 250 250;
+  }
+
+  body {
+    @apply bg-background text-foreground transition-colors duration-300 font-sans;
+    background-image: 
+      radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.05) 0px, transparent 50%),
+      radial-gradient(at 50% 0%, rgba(168, 85, 247, 0.03) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, rgba(99, 102, 241, 0.05) 0px, transparent 50%);
+    background-attachment: fixed;
+  }
+}
+
+/* Custom premium styles */
+.glass-panel {
+  @apply bg-white/5 dark:bg-black/40 backdrop-blur-md border border-black/5 dark:border-white/10 shadow-lg rounded-2xl;
+}
+
+.glass-card {
+  @apply bg-white/10 dark:bg-zinc-900/60 backdrop-blur-sm border border-black/10 dark:border-zinc-800 rounded-xl transition-all duration-300;
+}
+
+.glass-card:hover {
+  @apply border-primary/40 shadow-lg shadow-primary/5 transform -translate-y-0.5;
+}
+
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary;
+}
+
+.gradient-bg {
+  @apply bg-gradient-to-r from-primary to-secondary;
+}
+
+.glow-btn {
+  @apply bg-gradient-to-r from-primary to-secondary hover:shadow-lg hover:shadow-primary/30 transition-all duration-300 text-white font-medium rounded-xl;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-zinc-300 dark:bg-zinc-700 rounded-full hover:bg-zinc-400 dark:hover:bg-zinc-600;
+}
+
+/* Monaco Code Editor Simulator blinking cursor */
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+.cursor-blink {
+  animation: blink 1s step-start infinite;
+}
